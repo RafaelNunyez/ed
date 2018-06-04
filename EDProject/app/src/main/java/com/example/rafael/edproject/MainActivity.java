@@ -6,14 +6,19 @@ import android.widget.*;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
-    private EditText num1, num2;
-    private Button sumaBtn, restaBtn, multBtn, divBtn;
+    private EditText num1;
+    private EditText num2;
+    private Button sumaBtn;
+    private Button restaBtn;
+    private Button multBtn;
+    private Button divBtn;
     private TextView resultado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         addListenerOnButton();
     }
@@ -78,6 +83,5 @@ public class MainActivity extends AppCompatActivity {
                 resultado.setText(res);
             }
         });
-
     }
 }
