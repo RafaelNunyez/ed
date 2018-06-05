@@ -6,82 +6,60 @@ import android.widget.*;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
-    private EditText num1;
-    private EditText num2;
-    private Button sumaBtn;
-    private Button restaBtn;
-    private Button multBtn;
-    private Button divBtn;
-    private TextView resultado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-        addListenerOnButton();
     }
 
-    public void addListenerOnButton() {
-        num1 = findViewById(R.id.num1);
-        num2 = findViewById(R.id.num2);
-        sumaBtn = findViewById(R.id.suma);
-        restaBtn = findViewById(R.id.resta);
-        multBtn = findViewById(R.id.mult);
-        divBtn = findViewById(R.id.div);
-        resultado = findViewById(R.id.resultado);
+    public void sumaAction (View v){
 
-        sumaBtn.setOnClickListener(new View.OnClickListener() {
+        EditText fieldValue1 = (EditText)findViewById(R.id.num1);
+        EditText fieldValue2 = (EditText)findViewById(R.id.num2);
 
-            @Override
-            public void onClick(View view) {
-                String value1 = num1.getText().toString();
-                String value2 = num2.getText().toString();
-                int a = Integer.parseInt(value1);
-                int b = Integer.parseInt(value2);
-                int res = a + b;
-                resultado.setText(res);
-            }
-        });
+        int a = Integer.parseInt(fieldValue1.getText().toString());
+        int b = Integer.parseInt(fieldValue2.getText().toString());
 
-        restaBtn.setOnClickListener(new View.OnClickListener() {
 
-            @Override
-            public void onClick(View view) {
-                String value1 = num1.getText().toString();
-                String value2 = num2.getText().toString();
-                int a = Integer.parseInt(value1);
-                int b = Integer.parseInt(value2);
-                int res = a - b;
-                resultado.setText(res);
-            }
-        });
+        TextView viewResult = (TextView)findViewById(R.id.resultado);
+        int result = a + b;
+        viewResult.setText(String.valueOf(result));
+    }
 
-        multBtn.setOnClickListener(new View.OnClickListener() {
+    public void restaAction (View v){
+        EditText fieldValue1 = (EditText)findViewById(R.id.num1);
+        EditText fieldValue2 = (EditText)findViewById(R.id.num2);
 
-            @Override
-            public void onClick(View view) {
-                String value1 = num1.getText().toString();
-                String value2 = num2.getText().toString();
-                int a = Integer.parseInt(value1);
-                int b = Integer.parseInt(value2);
-                int res = a * b;
-                resultado.setText(res);
-            }
-        });
+        int a = Integer.parseInt(fieldValue1.getText().toString());
+        int b = Integer.parseInt(fieldValue2.getText().toString());
 
-        divBtn.setOnClickListener(new View.OnClickListener() {
+        TextView viewResult = (TextView)findViewById(R.id.resultado);
+        int result = a - b;
+        viewResult.setText(String.valueOf(result));
+    }
 
-            @Override
-            public void onClick(View view) {
-                String value1 = num1.getText().toString();
-                String value2 = num2.getText().toString();
-                int a = Integer.parseInt(value1);
-                int b = Integer.parseInt(value2);
-                int res = a / b;
-                resultado.setText(res);
-            }
-        });
+    public void multAction (View v){
+        EditText fieldValue1 = (EditText)findViewById(R.id.num1);
+        EditText fieldValue2 = (EditText)findViewById(R.id.num2);
+
+        int a = Integer.parseInt(fieldValue1.getText().toString());
+        int b = Integer.parseInt(fieldValue2.getText().toString());
+
+        TextView viewResult = (TextView)findViewById(R.id.resultado);
+        int result = a * b;
+        viewResult.setText(String.valueOf(result));
+    }
+
+    public void divAction (View v){
+        EditText fieldValue1 = (EditText)findViewById(R.id.num1);
+        EditText fieldValue2 = (EditText)findViewById(R.id.num2);
+
+        int a = Integer.parseInt(fieldValue1.getText().toString());
+        int b = Integer.parseInt(fieldValue2.getText().toString());
+
+        TextView viewResult = (TextView)findViewById(R.id.resultado);
+        int result = a / b;
+        viewResult.setText(String.valueOf(result));
     }
 }
